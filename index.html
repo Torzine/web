@@ -1,96 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Buat Kamu 💖</title>
-
-<style>
-
-body{
-text-align:center;
-font-family:Arial;
-background:pink;
-margin-top:60px;
-}
-
-h1{
-color:#cc0066;
-padding:20px;
-}
-
-img{
-width:220px;
-transition:0.3s;
-}
-
-button{
-
-padding:15px 30px;
-font-size:20px;
-border:none;
-border-radius:10px;
-margin:10px;
-cursor:pointer;
-
-}
-
-#yes{
-background:green;
-color:white;
-}
-
-#no{
-background:red;
-color:white;
-position:relative;
-}
-
-</style>
-
-</head>
-
-<body>
-
-
-<h1 id="kata">
-
-Kamu mau jadi pacar aku nggak? 💕
-
-</h1>
-
-
-<img id="foto"
-src="https://media1.tenor.com/m/zuHWKHqDHK0AAAAd/nailong-yellow-dragon.gif">
-
-<br><br>
-
-<button id="yes">
-
-Mau 💖
-
-</button>
-
-
-<button id="no">
-
-Nggak 😢
-
-</button>
-
-
-
 <script>
-
 
 let klik=0;
 
 let kata=document.getElementById("kata");
-
 let noBtn=document.getElementById("no");
-
+let yesBtn=document.getElementById("yes");
 let foto=document.getElementById("foto");
+
+let ukuranYes=20;
+let ukuranNo=20;
 
 
 
@@ -130,18 +48,18 @@ foto.src="https://media1.tenor.com/m/fBT-KRZP79IAAAAd/yellow-dragon-nailong.gif"
 
 
 
-else{
+else if(klik==4){
 
-kata.innerHTML="Yah kok kamu kejam sih 😭";
+kata.innerHTML="Jangan nolak aku dong 🥺";
 
 foto.src="https://media1.tenor.com/m/ZKRfKT65-cUAAAAC/dino-boy-dino-kuning.gif";
 
 
 function kabur(){
 
-let x=Math.random()*300;
+let x=Math.random()*window.innerWidth;
 
-let y=Math.random()*400;
+let y=Math.random()*window.innerHeight;
 
 noBtn.style.position="absolute";
 
@@ -151,22 +69,36 @@ noBtn.style.top=y+"px";
 
 }
 
-
-// Untuk Laptop (Mouse)
 noBtn.onmouseover=kabur;
-
-
-// Untuk HP (Touch)
 noBtn.ontouchstart=kabur;
 
 }
 
 
+
+else if(klik==5){
+
+kata.innerHTML="Yaudah No nya aku ilangin 😭";
+
+noBtn.style.display="none";
+
 }
 
 
 
-document.getElementById("yes").onclick=function(){
+ukuranYes += 5;
+ukuranNo -= 3;
+
+
+yesBtn.style.fontSize=ukuranYes+"px";
+noBtn.style.fontSize=ukuranNo+"px";
+
+
+}
+
+
+
+yesBtn.onclick=function(){
 
 kata.innerHTML="YEEEE ❤️ Aku seneng bangettt!!! 💖";
 
@@ -176,9 +108,3 @@ foto.src="https://media1.tenor.com/m/5-krEw12WA0AAAAC/yellow-dragon-nailong.gif"
 
 
 </script>
-
-
-
-</body>
-
-</html>
