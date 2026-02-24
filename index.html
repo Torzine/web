@@ -7,7 +7,46 @@
 <title>Buat Kamu 💖</title>
 
 <style>
+<script>
 
+function loveJatuh(){
+
+let love=document.createElement("div");
+
+love.innerHTML="❤️";
+
+love.style.position="fixed";
+
+love.style.top="-10px";
+
+love.style.left=Math.random()*window.innerWidth+"px";
+
+love.style.fontSize="30px";
+
+document.body.appendChild(love);
+
+
+let jatuh=setInterval(function(){
+
+love.style.top=parseInt(love.style.top)+5+"px";
+
+if(parseInt(love.style.top)>window.innerHeight){
+
+clearInterval(jatuh);
+
+love.remove();
+
+}
+
+},30)
+
+}
+
+
+
+setInterval(loveJatuh,500);
+
+</script>
 body{
 text-align:center;
 font-family:Arial;
@@ -203,21 +242,42 @@ noBtn.style.fontSize=ukuranNo+"px";
 
 
 
-
 yesBtn.onclick=function(){
 
 kata.innerHTML="YEEEE ❤️ Aku seneng bangettt!!! 💖";
 
 foto.src="https://media1.tenor.com/m/5-krEw12WA0AAAAC/yellow-dragon-nailong.gif";
 
+confetti();
+
 }
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+<script>
+
+function confetti(){
+
+confetti({
+
+particleCount:200,
+
+spread:100
+
+})
+
+}
+
+</script>
 
 </script>
 
 
 
 </body>
+<audio autoplay loop>
 
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
+
+</audio>
 </html>
