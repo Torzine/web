@@ -1,4 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Buat Kamu 💖</title>
+
+<style>
+
+body{
+text-align:center;
+font-family:Arial;
+background:pink;
+margin-top:60px;
+overflow:hidden;
+}
+
+h1{
+color:#cc0066;
+padding:20px;
+}
+
+img{
+width:220px;
+transition:0.3s;
+}
+
+button{
+
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:10px;
+margin:10px;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+#yes{
+background:green;
+color:white;
+}
+
+#no{
+background:red;
+color:white;
+position:relative;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<h1 id="kata">
+
+Kamu mau jadi pacar aku nggak? 💕
+
+</h1>
+
+
+<img id="foto"
+src="https://media1.tenor.com/m/zuHWKHqDHK0AAAAd/nailong-yellow-dragon.gif">
+
+<br><br>
+
+
+<button id="yes">
+
+Mau 💖
+
+</button>
+
+
+<button id="no">
+
+Nggak 😢
+
+</button>
+
+
+
 <script>
+
 
 let klik=0;
 
@@ -18,6 +105,7 @@ klik++;
 
 
 
+// Tahap 1
 if(klik==1){
 
 kata.innerHTML="Beneran kamu nggak mau? 🥺";
@@ -27,7 +115,7 @@ foto.src="https://media1.tenor.com/m/T0L2apEPiKoAAAAC/nailong.gif";
 }
 
 
-
+// Tahap 2
 else if(klik==2){
 
 kata.innerHTML="Beneran benerr kamu nggak mau? 😭";
@@ -37,7 +125,7 @@ foto.src="https://media1.tenor.com/m/CYYd47hWWKkAAAAC/nailong.gif";
 }
 
 
-
+// Tahap 3
 else if(klik==3){
 
 kata.innerHTML="Beneran bener kamu nggak mauu??? 💔";
@@ -47,7 +135,7 @@ foto.src="https://media1.tenor.com/m/fBT-KRZP79IAAAAd/yellow-dragon-nailong.gif"
 }
 
 
-
+// Tahap 4 → Tombol mulai kabur
 else if(klik==4){
 
 kata.innerHTML="Jangan nolak aku dong 🥺";
@@ -69,16 +157,21 @@ noBtn.style.top=y+"px";
 
 }
 
+
+// Laptop
 noBtn.onmouseover=kabur;
+
+
+// HP
 noBtn.ontouchstart=kabur;
 
 }
 
 
-
+// Tahap 5 → Tombol hilang
 else if(klik==5){
 
-kata.innerHTML="Yaudah No nya aku ilangin 😭";
+kata.innerHTML="Yaudah kalau gitu No nya aku ilangin 😭";
 
 noBtn.style.display="none";
 
@@ -86,15 +179,28 @@ noBtn.style.display="none";
 
 
 
-ukuranYes += 5;
-ukuranNo -= 3;
 
+// Yes makin besar
+ukuranYes +=5;
 
 yesBtn.style.fontSize=ukuranYes+"px";
+
+
+
+// No makin kecil
+
+if(ukuranNo>8){
+
+ukuranNo -=2;
+
 noBtn.style.fontSize=ukuranNo+"px";
+
+}
+
 
 
 }
+
 
 
 
@@ -107,4 +213,11 @@ foto.src="https://media1.tenor.com/m/5-krEw12WA0AAAAC/yellow-dragon-nailong.gif"
 }
 
 
+
 </script>
+
+
+
+</body>
+
+</html>
