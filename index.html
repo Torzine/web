@@ -137,7 +137,7 @@ kata.innerHTML="Yah kok kamu kejam sih 😭";
 foto.src="https://media1.tenor.com/m/ZKRfKT65-cUAAAAC/dino-boy-dino-kuning.gif";
 
 
-noBtn.onmouseover=function(){
+function kabur(){
 
 let x=Math.random()*300;
 
@@ -151,8 +151,15 @@ noBtn.style.top=y+"px";
 
 }
 
-}
 
+// Untuk Laptop (Mouse)
+noBtn.onmouseover=kabur;
+
+
+// Untuk HP (Touch)
+noBtn.ontouchstart=kabur;
+
+}
 
 
 }
