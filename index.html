@@ -85,10 +85,8 @@ Nggaaaaa maauuu 😢
 
 
 <!-- Musik -->
-<audio autoplay loop>
-
-<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
-
+<audio id="musik" loop>
+<source src="until_i_found_you.mp3" type="audio/mpeg">
 </audio>
 
 
@@ -304,7 +302,12 @@ spread:120
 
 }
 
+let musik=document.getElementById("musik");
 
+// Autoplay setelah klik layar
+document.body.addEventListener("click",function(){
+musik.play();
+});
 
 </script>
 
